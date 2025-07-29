@@ -10,6 +10,7 @@ import com.felipemz.taskmanager.domain.usecase.AddTaskUseCase
 import com.felipemz.taskmanager.domain.usecase.MarkTaskAsSyncedUseCase
 import com.felipemz.taskmanager.domain.usecase.ObservePendingTasksUseCase
 import com.felipemz.taskmanager.domain.usecase.ObserveTasksUseCase
+import com.felipemz.taskmanager.domain.usecase.TaskSyncUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -35,4 +36,5 @@ object AppModule {
     @Provides fun provideObservePendingTasksUseCase(repo: TaskRepository) = ObservePendingTasksUseCase(repo)
     @Provides fun provideObserveTasksUseCase(repo: TaskRepository) = ObserveTasksUseCase(repo)
     @Provides fun provideMarkSyncedUseCase(repo: TaskRepository) = MarkTaskAsSyncedUseCase(repo)
+    @Provides fun provideTaskSyncUseCase(repo: TaskRepository) = TaskSyncUseCase(repo)
 }
