@@ -15,10 +15,7 @@ class TaskRepositoryImpl(
     }
 
     override fun getTasks(): Flow<List<Task>> =
-        dao.getAllTasks().map { list ->
-            println("Fetching tasks from database: $list")
-            list.map { it.toDomain() }
-        }
+        dao.getAllTasks().map { list -> list.map { it.toDomain() } }
 
     override fun getPendingTasks(): Flow<List<Task>> =
         dao.getPendingTasks().map { list -> list.map { it.toDomain() } }
