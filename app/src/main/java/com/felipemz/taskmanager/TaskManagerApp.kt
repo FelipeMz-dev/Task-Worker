@@ -7,7 +7,7 @@ import dagger.hilt.android.HiltAndroidApp
 import jakarta.inject.Inject
 
 @HiltAndroidApp
-class TaskManagerApp() : Application(), Configuration.Provider {
+class TaskManagerApp : Application(), Configuration.Provider {
 
     @Inject
     lateinit var workerFactory: HiltWorkerFactory
